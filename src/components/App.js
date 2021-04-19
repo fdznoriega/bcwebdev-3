@@ -1,10 +1,10 @@
 
 import {useState} from 'react';
 // components
-import Home from 'Home';
-import Navbar from 'Navbar';
-import NewPost from 'NewPost';
-import Profile from 'Profile';
+import Home from './Home';
+import Navbar from './Navbar';
+import NewPost from './NewPost';
+import Profile from './Profile';
 // import Login from 'Login';
 import './App.css';
 

@@ -1,11 +1,12 @@
-// here is our sample inital store
 
+// define a user type
 const UserType = {
     User: "User",
     Organization: "Organization",
     Moderator: "Moderator"
 }
 
+// define a category type
 const Category = {
     Water: "Water",
     Housing: "Housing",
@@ -13,7 +14,7 @@ const Category = {
     None: "None"
 }
 
-let initalStore = {
+let initialStore = {
     currentUserId: "anthony",
     users: [
         {

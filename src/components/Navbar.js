@@ -1,7 +1,7 @@
-
+import React from 'react';
+import css from './Navbar.module.css';
 
 function Navbar(props) {
-
     function handleNavChange(page){
         if (props.onNavChange){
             console.log("Redirecting to: " + page);
@@ -10,31 +10,30 @@ function Navbar(props) {
     }
 
     return (
-        <nav>
-
-            <div>
+        <nav className={css.navbar}>
+            <div className={css.navItem}>
                 <button onClick={e => handleNavChange("Water")}>
-                    Water
+                    <i class="fas fa-compass"></i>
                 </button>
             </div>
-            <div>
+            <div className={css.navItem}>
                 <button onClick={e => handleNavChange("Food")}>
-                    Food
+                    <i className="fas fa-utensils"></i>
                 </button>
             </div>
-            <div>
+            <div className={css.navItem}>
                 <button onClick={e => handleNavChange("NewPost")}>
-                    New Post
+                    <i className="fas fa-plus-square"></i>
                 </button>
             </div>
-            <div>
+            <div className={css.navItem}>
                 <button onClick={e => handleNavChange("Housing")}>
-                    Housing
+                    <i className="fas fa-home"></i>
                 </button>
             </div>
-            <div>
+            <div className={css.navItem}>
                 <button onClick={e => handleNavChange("WildCard")}>
-                    Wild Card
+                    <i class="fas fa-vr-cardboard"></i>
                 </button>
             </div>
         </nav>

@@ -13,7 +13,7 @@ function Navbar(props) {
         <nav className={css.navbar}>
             <div className={css.navItem}>
                 <button onClick={e => handleNavChange("Water")}>
-                    <i class="fas fa-compass"></i>
+                    <i className="fas fa-compass"></i>
                 </button>
             </div>
             <div className={css.navItem}>
@@ -33,7 +33,7 @@ function Navbar(props) {
             </div>
             <div className={css.navItem}>
                 <button onClick={e => handleNavChange("WildCard")}>
-                    <i class="fas fa-vr-cardboard"></i>
+                    <i className="fas fa-vr-cardboard"></i>
                 </button>
             </div>
         </nav>

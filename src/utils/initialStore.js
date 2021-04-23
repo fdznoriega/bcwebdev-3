@@ -33,6 +33,15 @@ let initialStore = {
             name: "The Greater Boston Food Bank",
             bio: "Together, we can end hunger here",
             photo: "/assets/user2.png",
+            zipcode: "02111"
+        },
+        {
+            id: "saundra",
+            email: "saundra@gmail.com",
+            type: UserType.User,
+            name: "Saundra Mills",
+            bio: "",
+            photo: "/assets/user2.png",
             zipcode: "02118"
         }
     ],
@@ -45,6 +54,24 @@ let initialStore = {
             body: "I'm looking for food banks nearby. Does anyone know where I can find one?",
             category: Category.Food,
             datetime: "2020-02-09T22:45:28Z"
+        },
+        {
+            id: "post-2",
+            userId: "saundra",
+            userType: UserType.User,
+            title: "I can't get clean water lately",
+            body: "Does anyone know where I can get free gallons of water?",
+            category: Category.Water,
+            datetime: "2020-03-09T22:45:28Z"
+        },
+        {
+            id: "post-3",
+            userId: "bosfoodbank",
+            userType: UserType.Organization,
+            title: "We're Relocating!",
+            body: "You can find our new address at our website: https://www.gbfb.org/",
+            category: Category.Food,
+            datetime: "2020-04-09T22:45:28Z"
         }
     ],
     comments: [

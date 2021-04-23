@@ -15,6 +15,7 @@ import uniqueId from '../utils/uniqueId';
 
 // possible routing...
 // sc.com/
+// sc.com/post/
 // sc.com/profile
 // sc.com/profile/userId
 // sc.com/category/water

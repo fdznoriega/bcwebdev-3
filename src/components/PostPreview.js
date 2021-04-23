@@ -9,42 +9,69 @@ function PostPreview(props) {
     let titlePreview = post.title.length > maxChars ? post.title.substring(0, maxChars - 4) + "..." : post.title;
     let bodyPreview = post.body.length > maxChars ? post.body.substring(0, maxChars - 4) + "..." : post.body;
 
-    function handleLike() {
+    // get num of likes, num of comments
+    let numOfLikes = props.likes.filter(like => like.postId === post.id).length;
+    let numOfComments = props.comments.filter(comment => comment.postId === post.id).length;
 
+    function handleLike() {
+        props.onLike();
     }
 
     function handleUnlike() {
-
+        props.onUnlike();
     }
 
     function handleExpandPost() {
         console.log("expanding post");
     }
 
+    function handleExpandComments() {
+        console.log("expand posts and jump to comments")
+    }
+
     return (
         <div>
             {/* FIRST COLUMN: COLOR */}
+            <div>COLOR COLUMN</div>
+
             {/* SECOND COLUMN: CONTENT */}
+            <div>
+                {/* user icon and title section */}
+                <section>
+                    <p>USER IMAGE</p>
+                    <b>
+                        <p>{titlePreview}</p>
+                    </b>
+                </section>
+
+                {/* body preview section */}
+                <section>
+                    <p>{bodyPreview}</p>
+                </section>
+
+                {/* likes and comments */}
+                <section>
+                    <div>
+                        <span>{numOfLikes}</span>
+                        <button onClick={handleLike}>
+                            {/* TODO */}
+                            <span>LIKE IMAGE</span>
+                        </button>
+                    </div>
+
+                    <div>
+                        <span>{numOfComments}</span>
+                        <button onClick={handleExpandComments}>
+                            {/* TODO */}
+                            <span>COMMENT IMAGE</span>
+                        </button>
+                    </div>
+                </section>
+
+            </div>
             {/* THIRD COLUMN: EXPAND POST BUTTON */}
             <div>
-                <p>USER IMAGE</p>
-                <b>
-                    <p>{titlePreview}</p>
-                </b>
-                
-            </div>
-            
-            <div>
-                <p>{bodyPreview}</p>
-            </div>
-
-            <div>
-                <p>LIKES ICON AND COUNT</p>
-                <p>COMMENTS ICON AND COUNT</p>
-            </div>
-
-            <div>
-                <button onClick={handleExpandPost}>Click me to expand the post</button>
+                <button onClick={handleExpandPost}>expand post</button>
             </div>
 
         </div>

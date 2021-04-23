@@ -3,7 +3,7 @@ import PostPreview from './PostPreview';
 
 function Home(props) {
 
-    // store
+    const currentUserId = props.store.currentUserId;
     const users = props.store.users;
     const comments = props.store.comments;
     const likes = props.store.likes;
@@ -23,7 +23,12 @@ function Home(props) {
 
     // given some post, fetch the likes
     function findLikes(post) {
-        return likes.filter(like => like.postId === post.id)
+        let postLikes = likes.filter(like => like.postId === post.id);
+
+        return {
+            self: postLikes.some(like => like.userId === currentUserId),
+            count: postLikes.length
+        }
     }
 
     // stacked posts, sorted by time published
@@ -47,9 +52,9 @@ function Home(props) {
                         post={post}
                         comments={findComments(post)}
                         likes={findLikes(post)}
-                        onLike={props.addLike}
-                        onUnlike={props.removeLike}
-                        onComment={props.addComment}
+                        onLike={props.onLike}
+                        onUnlike={props.onUnlike}
+                        onComment={props.onComment}
                     />
                 )
             }

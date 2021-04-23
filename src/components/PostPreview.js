@@ -10,15 +10,15 @@ function PostPreview(props) {
     let bodyPreview = post.body.length > maxChars ? post.body.substring(0, maxChars - 4) + "..." : post.body;
 
     // get num of likes, num of comments
-    let numOfLikes = props.likes.filter(like => like.postId === post.id).length;
-    let numOfComments = props.comments.filter(comment => comment.postId === post.id).length;
+    let likeCount = props.likes.count;
+    let commentCount = props.comments.length;
 
     function handleLike() {
-        props.onLike();
+        props.onLike(post.id);
     }
 
     function handleUnlike() {
-        props.onUnlike();
+        props.onUnlike(post.id);
     }
 
     function handleExpandPost() {
@@ -27,6 +27,28 @@ function PostPreview(props) {
 
     function handleExpandComments() {
         console.log("expand posts and jump to comments")
+    }
+
+    // renders like icon, which can be "liked" or "unliked"
+    function renderLikeIcon() {
+        if(props.likes.self) {
+            return (
+                <img 
+                    src=""
+                    alt="Unlike Action"
+                    onClick={handleUnlike}
+                />
+            );
+        }
+        else {
+            return (
+                <img 
+                    src=""
+                    alt="Like Action"
+                    onClick={handleLike}
+                />
+            );
+        }
     }
 
     return (
@@ -52,19 +74,18 @@ function PostPreview(props) {
                 {/* likes and comments */}
                 <section>
                     <div>
-                        <span>{numOfLikes}</span>
-                        <button onClick={handleLike}>
-                            {/* TODO */}
-                            <span>LIKE IMAGE</span>
-                        </button>
+                        <span>{likeCount}</span>
+                        {renderLikeIcon()}
                     </div>
 
                     <div>
-                        <span>{numOfComments}</span>
-                        <button onClick={handleExpandComments}>
-                            {/* TODO */}
-                            <span>COMMENT IMAGE</span>
-                        </button>
+                        <span>{commentCount}</span>
+                        <img 
+                            src=""
+                            alt="Comment Action"
+                            onClick={handleExpandComments}
+                        />
+
                     </div>
                 </section>
 

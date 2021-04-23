@@ -13,11 +13,22 @@ import initialStore from '../utils/initialStore';
 // utils
 import uniqueId from '../utils/uniqueId';
 
+// possible routing...
+// sc.com/
+// sc.com/profile
+// sc.com/profile/userId
+// sc.com/category/water
+// sc.com/category/housing
+// sc.com/category/food
+// sc.com/settings
+// sc.com/login
+// sc.com/newpost
 
 function App() {
 
   const [page, setPage] = useState("Home");
   const [store, setStore] = useState(initialStore);
+  // const [category, setCategory] = useState(null); 
 
   // functions to manage data:
   // add like
@@ -49,13 +60,13 @@ function App() {
   }
   
   // add post given a title, body, and category
-  function addPost(title, body, category) {
+  function addPost(title, body, cat) {
     const post = {
       id: uniqueId("post"),
       userId: store.currentUserId,
       title: title,
       body: body,
-      category: category,
+      category: cat,
       datetime: new Date().toISOString()
     }
 

@@ -79,18 +79,7 @@ function App() {
     })
   }
 
-  function expandPost(postInfo) {
-    postData = {
-      key: postInfo.key,
-      user: postInfo.user,
-      post: postInfo.post,
-      comments: postInfo.comments,
-      likes: postInfo.likes,
-      onLike: postInfo.onLike,
-      onUnlike: postInfo.onUnlike,
-      onComment: postInfo.onComment,
-      onExpand: postInfo.onExpand
-    }
+  function expandPost() {
     setPage("Post");
   }
 

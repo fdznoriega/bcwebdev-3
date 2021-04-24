@@ -13,7 +13,7 @@ function Navbar(props) {
         <nav className={css.navbar}>
             <div className={css.navItem}>
                 <button onClick={e => handleNavChange("Water")}>
-                    <i className="fas fa-compass"></i>
+                    <i className="fas fa-tint"></i>
                 </button>
             </div>
             <div className={css.navItem}>

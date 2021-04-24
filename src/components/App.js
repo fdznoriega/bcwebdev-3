@@ -147,7 +147,10 @@ function App() {
           <Route path="/newpost"></Route>
 
           {/* go to profile */}
-          <Route path="/profile"></Route>
+          <Route path="/profile/?userId"></Route>
+
+          {/* open a post */}
+          <Route path="/post/?postId"></Route>
 
           {/* go to home */}
           <Route path="/">

@@ -2,8 +2,8 @@ i {
   color: green;
 }
 
-.user_image {
-  margin-top: 0;
+span {
+  margin-right: 5px;
 }
 
 .preview_background {
@@ -14,13 +14,26 @@ i {
   margin: 3%;
 }
 
+.user_image {
+  margin-top: 0;
+}
+
+.like_info, .comment_info {
+  display: inline;
+}
+
+.comment_info {
+  margin-left: 20px;
+}
+
 .color_flex_item {
-  flex-basis: 10%;
+  background-color: green;
+  flex-basis: 2%;
   padding-top: 1%;
 }
 
 .content_flex_item {
-  flex-basis: 80%;
+  flex-basis: 88%;
   text-align: left;
   padding: 1%
 }

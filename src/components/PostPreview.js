@@ -34,20 +34,12 @@ function PostPreview(props) {
     function renderLikeIcon() {
         if(props.likes.self) {
             return (
-                <img
-                    src=""
-                    alt="Unlike Action"
-                    onClick={handleUnlike}
-                />
+                <i class="fas fa-heart" onClick={handleUnlike}></i>
             );
         }
         else {
             return (
-                <img
-                    src=""
-                    alt="Like Action"
-                    onClick={handleLike}
-                />
+                <i class="far fa-heart" onClick={handleLike}></i>
             );
         }
     }
@@ -55,7 +47,7 @@ function PostPreview(props) {
     return (
         <div className={css.preview_background}>
             {/* FIRST COLUMN: COLOR */}
-            <div className={css.color_flex_item}>COLOR COLUMN</div>
+            <div className={css.color_flex_item}></div>
 
             {/* SECOND COLUMN: CONTENT */}
             <div className={css.content_flex_item}>
@@ -74,19 +66,14 @@ function PostPreview(props) {
 
                 {/* likes and comments */}
                 <section>
-                    <div>
+                    <div className={css.like_info}>
                         <span>{likeCount}</span>
                         {renderLikeIcon()}
                     </div>
 
-                    <div>
+                    <div className={css.comment_info}>
                         <span>{commentCount}</span>
-                        <img
-                            src=""
-                            alt="Comment Action"
-                            onClick={handleExpandComments}
-                        />
-
+                        <i class="fas fa-comment"></i>
                     </div>
                 </section>
 

@@ -42,7 +42,7 @@ function Home(props) {
                 //         return postId === post.id;
                 //     }
                 //     else {
-                //         return true; 
+                //         return true;
                 //     }
                 // })
                 .map(post =>

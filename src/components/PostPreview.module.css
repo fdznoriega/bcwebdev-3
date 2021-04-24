@@ -1,0 +1,31 @@
+i {
+  color: green;
+}
+
+.user_image {
+  margin-top: 0;
+}
+
+.preview_background {
+  display: flex;
+  background-color: #F0F0F0;
+  border-radius: 15px;
+  text-align: center;
+  margin: 3%;
+}
+
+.color_flex_item {
+  flex-basis: 10%;
+  padding-top: 1%;
+}
+
+.content_flex_item {
+  flex-basis: 80%;
+  text-align: left;
+  padding: 1%
+}
+
+.expand_flex_item {
+  flex-basis: 10%;
+  align-self: center;
+}

@@ -1,6 +1,7 @@
+import css from './PostPreview.module.css';
 
 function PostPreview(props) {
-    
+
     // key, user, post, comments, likes, onLike, onUnlike, onComment
     const post = props.post;
     const maxChars = 100;
@@ -33,7 +34,7 @@ function PostPreview(props) {
     function renderLikeIcon() {
         if(props.likes.self) {
             return (
-                <img 
+                <img
                     src=""
                     alt="Unlike Action"
                     onClick={handleUnlike}
@@ -42,7 +43,7 @@ function PostPreview(props) {
         }
         else {
             return (
-                <img 
+                <img
                     src=""
                     alt="Like Action"
                     onClick={handleLike}
@@ -52,15 +53,15 @@ function PostPreview(props) {
     }
 
     return (
-        <div>
+        <div className={css.preview_background}>
             {/* FIRST COLUMN: COLOR */}
-            <div>COLOR COLUMN</div>
+            <div className={css.color_flex_item}>COLOR COLUMN</div>
 
             {/* SECOND COLUMN: CONTENT */}
-            <div>
+            <div className={css.content_flex_item}>
                 {/* user icon and title section */}
                 <section>
-                    <p>USER IMAGE</p>
+                    <p className={css.user_image}>USER IMAGE</p>
                     <b>
                         <p>{titlePreview}</p>
                     </b>
@@ -80,7 +81,7 @@ function PostPreview(props) {
 
                     <div>
                         <span>{commentCount}</span>
-                        <img 
+                        <img
                             src=""
                             alt="Comment Action"
                             onClick={handleExpandComments}
@@ -91,8 +92,8 @@ function PostPreview(props) {
 
             </div>
             {/* THIRD COLUMN: EXPAND POST BUTTON */}
-            <div>
-                <button onClick={handleExpandPost}>expand post</button>
+            <div className={css.expand_flex_item}>
+                <i className="fas fa-angle-right fa-2x arrow" onClick={handleExpandPost}></i>
             </div>
 
         </div>

@@ -23,7 +23,7 @@ function PostPreview(props) {
     }
 
     function handleExpandPost() {
-        console.log("expanding post");
+        props.onExpand();
     }
 
     function handleExpandComments() {

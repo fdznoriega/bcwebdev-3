@@ -55,6 +55,7 @@ function Home(props) {
                         onLike={props.onLike}
                         onUnlike={props.onUnlike}
                         onComment={props.onComment}
+                        onExpand={props.onExpand}
                     />
                 )
             }

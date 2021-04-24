@@ -6,6 +6,7 @@ import Home from './Home';
 import Navbar from './Navbar';
 import NewPost from './NewPost';
 import Profile from './Profile';
+import Post from './Post';
 // import Login from 'Login';
 import './App.css';
 // data from the initial store
@@ -29,12 +30,12 @@ function App() {
 
   const [page, setPage] = useState("Home");
   const [store, setStore] = useState(initialStore);
-  // const [category, setCategory] = useState(null); 
+  // const [category, setCategory] = useState(null);
 
   // functions to manage data:
   // add like
   function addLike(postId) {
-    
+
     // define like object
     const like = {
       userId: store.currentUserId,
@@ -49,7 +50,7 @@ function App() {
     })
 
   }
-  
+
   // remove like
   function removeLike(postId) {
 
@@ -59,7 +60,7 @@ function App() {
       likes: store.likes.filter(like => !(store.currentUserId === like.userId && like.postId === postId))
     })
   }
-  
+
   // add post given a title, body, and category
   function addPost(title, body, cat) {
     const post = {
@@ -77,9 +78,13 @@ function App() {
     })
   }
 
+  function expandPost() {
+    setPage("Post");
+  }
+
   // add comment
   function addComment(postId, text) {
-    
+
     // create a new comment
     const comment = {
       userId: store.currentUserId,
@@ -98,24 +103,29 @@ function App() {
   function cancelPost() {
     setPage("Home");
   }
-  
+
   function renderMain(p) {
     switch (p) {
       case "Home": return <Home store={store}
                                 onLike={addLike}
                                 onUnlike={removeLike}
                                 onComment={addComment}
+                                onExpand={expandPost}
                           />
       case "Profile": return <Profile store={store} />
-      case "NewPost": return <NewPost 
-                                store={store} 
+      case "NewPost": return <NewPost
+                                store={store}
                                 onPost={addPost}
                                 onPostCancel={cancelPost}
                                 />
+      case "Post": return <Post
+                            store={store}
+                          />
       default: return <Home store={store}
                             onLike={addLike}
                             onUnlike={removeLike}
                             onComment={addComment}
+                            onExpand={expandPost}
                       />
     }
   }

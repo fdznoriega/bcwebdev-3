@@ -34,12 +34,12 @@ function PostPreview(props) {
     function renderLikeIcon() {
         if(props.likes.self) {
             return (
-                <i class="fas fa-heart" onClick={handleUnlike}></i>
+                <i className="fas fa-heart" onClick={handleUnlike}></i>
             );
         }
         else {
             return (
-                <i class="far fa-heart" onClick={handleLike}></i>
+                <i className="far fa-heart" onClick={handleLike}></i>
             );
         }
     }
@@ -75,7 +75,7 @@ function PostPreview(props) {
 
                     <div className={css.comment_info}>
                         <span>{commentCount}</span>
-                        <i class="fas fa-comment"></i>
+                        <i className="fas fa-comment"></i>
                     </div>
                 </section>
 

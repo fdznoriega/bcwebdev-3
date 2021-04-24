@@ -13,6 +13,12 @@ import './App.css';
 import initialStore from '../utils/initialStore';
 // utils
 import uniqueId from '../utils/uniqueId';
+// react router
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
 // possible routing...
 // sc.com/
@@ -28,10 +34,7 @@ import uniqueId from '../utils/uniqueId';
 
 function App() {
 
-  const [page, setPage] = useState("Home");
   const [store, setStore] = useState(initialStore);
-  let postData = undefined;
-  // const [category, setCategory] = useState(null);
 
   // functions to manage data:
   // add like
@@ -132,8 +135,38 @@ function App() {
   }
   return (
     <div className="App">
-      {renderMain(page)}
-      <Navbar onNavChange={setPage}/>
+      {/* routing */}
+      <Router basename={process.env.PUBLIC_URL}>
+        {/* switch */}
+        <Switch>
+          
+          {/* filter on a category */}
+          <Route path="/category/?category"></Route>
+          
+          {/* go to new post */}
+          <Route path="/newpost"></Route>
+
+          {/* go to profile */}
+          <Route path="/profile"></Route>
+
+          {/* go to home */}
+          <Route path="/">
+            <Home store={store}
+                  onLike={addLike}
+                  onUnlike={removeLike}
+                  onComment={addComment}
+                  onExpand={expandPost}
+            />
+          </Route>
+
+        </Switch>
+
+        {/* navbar */}
+        <Navbar/>
+      </Router>
+
+      
+      
     </div>
   );
 }

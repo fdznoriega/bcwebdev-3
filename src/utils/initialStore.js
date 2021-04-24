@@ -32,7 +32,7 @@ let initialStore = {
             type: UserType.Organization,
             name: "The Greater Boston Food Bank",
             bio: "Together, we can end hunger here",
-            photo: "/assets/user2.png",
+            photo: "/assets/user1.png",
             zipcode: "02111"
         },
         {
@@ -41,7 +41,7 @@ let initialStore = {
             type: UserType.User,
             name: "Saundra Mills",
             bio: "",
-            photo: "/assets/user2.png",
+            photo: "/assets/user1.png",
             zipcode: "02118"
         }
     ],
@@ -93,4 +93,3 @@ let initialStore = {
 }
 
 export default initialStore;
-

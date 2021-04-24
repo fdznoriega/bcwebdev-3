@@ -18,6 +18,16 @@ span {
   margin-top: 0;
 }
 
+.title {
+  display: inline;
+  margin-left: 10px;
+}
+
+.divide {
+  width: 40%;
+  margin: 10px 0 5px;
+}
+
 .like_info, .comment_info {
   display: inline;
 }

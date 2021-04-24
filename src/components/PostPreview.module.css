@@ -28,6 +28,7 @@ span {
 
 .color_flex_item {
   background-color: green;
+  border-radius: 15px 0 0 15px;
   flex-basis: 2%;
   padding-top: 1%;
 }

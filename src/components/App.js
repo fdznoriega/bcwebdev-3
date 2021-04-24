@@ -117,7 +117,7 @@ function App() {
                                 store={store}
                                 onPost={addPost}
                                 onPostCancel={cancelPost}
-                                />
+                              />
       case "Post": return <Post
                             store={store}
                           />

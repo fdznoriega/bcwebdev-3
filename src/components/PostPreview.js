@@ -1,4 +1,5 @@
 import css from './PostPreview.module.css';
+import {Link} from 'react-router-dom';
 
 function PostPreview(props) {
 
@@ -20,10 +21,6 @@ function PostPreview(props) {
 
     function handleUnlike() {
         props.onUnlike(post.id);
-    }
-
-    function handleExpandPost() {
-        props.onExpand();
     }
 
     function handleExpandComments() {
@@ -82,7 +79,10 @@ function PostPreview(props) {
             </div>
             {/* THIRD COLUMN: EXPAND POST BUTTON */}
             <div className={css.expand_flex_item}>
-                <i className="fas fa-angle-right fa-2x arrow" onClick={handleExpandPost}></i>
+                <Link to= {"/post/" + post.id}>
+                    <i className="fas fa-angle-right fa-2x arrow"></i>
+                </Link>
+                
             </div>
 
         </div>

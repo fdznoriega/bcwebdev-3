@@ -4,14 +4,7 @@ import {
     Link
 } from "react-router-dom";
 
-function Navbar(props) {
-    function handleNavChange(page){
-        if (props.onNavChange){
-            console.log("Redirecting to: " + page);
-            props.onNavChange(page);
-        }
-    }
-
+function Navbar() {
     return (
         <nav className={css.navbar}>
             {/* water */}
@@ -51,7 +44,7 @@ function Navbar(props) {
             {/* wild card / home */}
             <div className={css.navItem}>
                 <Link to="/">
-                    <button onClick={e => handleNavChange("WildCard")}>
+                    <button>
                         <i className="fas fa-vr-cardboard"></i>
                     </button>
                 </Link>

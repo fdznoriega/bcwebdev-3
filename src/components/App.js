@@ -17,7 +17,8 @@ import uniqueId from '../utils/uniqueId';
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  useHistory
 } from "react-router-dom";
 
 // possible routing...
@@ -35,6 +36,7 @@ import {
 function App() {
 
   const [store, setStore] = useState(initialStore);
+  const history = useHistory("/");
 
   // functions to manage data:
   // add like
@@ -82,8 +84,10 @@ function App() {
     })
   }
 
-  function expandPost() {
-    setPage("Post");
+  function expandPost(postId) {
+    console.log("expand post");
+    // link react router via...history push?
+    // history.push("/post/" + postId)
   }
 
   // add comment
@@ -105,34 +109,9 @@ function App() {
 
   // cancel post
   function cancelPost() {
-    setPage("Home");
+    console.log('cancel post todo')
   }
 
-  function renderMain(p) {
-    switch (p) {
-      case "Home": return <Home store={store}
-                                onLike={addLike}
-                                onUnlike={removeLike}
-                                onComment={addComment}
-                                onExpand={expandPost}
-                          />
-      case "Profile": return <Profile store={store} />
-      case "NewPost": return <NewPost
-                                store={store}
-                                onPost={addPost}
-                                onPostCancel={cancelPost}
-                              />
-      case "Post": return <Post
-                            info={postData}
-                          />
-      default: return <Home store={store}
-                            onLike={addLike}
-                            onUnlike={removeLike}
-                            onComment={addComment}
-                            onExpand={expandPost}
-                      />
-    }
-  }
   return (
     <div className="App">
       {/* routing */}

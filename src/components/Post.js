@@ -1,3 +1,4 @@
+import PostPreview from './PostPreview';
 
 function Post(props) {
 

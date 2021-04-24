@@ -23,7 +23,7 @@ function PostPreview(props) {
     }
 
     function handleExpandPost() {
-        props.onExpand();
+        props.onExpand(props);
     }
 
     function handleExpandComments() {

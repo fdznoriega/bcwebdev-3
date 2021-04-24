@@ -30,6 +30,7 @@ function App() {
 
   const [page, setPage] = useState("Home");
   const [store, setStore] = useState(initialStore);
+  let postData = undefined;
   // const [category, setCategory] = useState(null);
 
   // functions to manage data:
@@ -78,7 +79,18 @@ function App() {
     })
   }
 
-  function expandPost() {
+  function expandPost(postInfo) {
+    postData = {
+      key: postInfo.key,
+      user: postInfo.user,
+      post: postInfo.post,
+      comments: postInfo.comments,
+      likes: postInfo.likes,
+      onLike: postInfo.onLike,
+      onUnlike: postInfo.onUnlike,
+      onComment: postInfo.onComment,
+      onExpand: postInfo.onExpand
+    }
     setPage("Post");
   }
 
@@ -119,7 +131,7 @@ function App() {
                                 onPostCancel={cancelPost}
                               />
       case "Post": return <Post
-                            store={store}
+                            info={postData}
                           />
       default: return <Home store={store}
                             onLike={addLike}

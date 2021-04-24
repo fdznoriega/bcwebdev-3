@@ -24,7 +24,17 @@ function Post(props) {
   }
 
   return (
-    <p>Post</p>
+    <PostPreview
+        key={props.info.key}
+        user={props.info.user}
+        post={post}
+        comments={findComments(post)}
+        likes={findLikes(post)}
+        onLike={props.onLike}
+        onUnlike={props.onUnlike}
+        onComment={props.onComment}
+        onExpand={props.onExpand}
+    />
   )
 
 }

@@ -1,31 +1,14 @@
-import PostPreview from './PostPreview';
+
+import {useParams} from 'react-router-dom';
 
 function Post(props) {
 
-  function handleLike() {
-      props.onLike(post.id);
-  }
+    let {postId} = useParams();
+    console.log(postId);
 
-  function handleUnlike() {
-      props.onUnlike(post.id);
-  }
-
-  function renderLikeIcon() {
-      if(props.likes.self) {
-          return (
-              <i class="fas fa-heart" onClick={handleUnlike}></i>
-          );
-      }
-      else {
-          return (
-              <i class="far fa-heart" onClick={handleLike}></i>
-          );
-      }
-  }
-
-  return (
-    <p>Post</p>
-  )
+    return (
+        <p>Post</p>
+    )
 
 }
 

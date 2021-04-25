@@ -1,5 +1,6 @@
 import React from 'react';
 import PostPreview from './PostPreview';
+import {useParams} from 'react-router-dom';
 
 function Home(props) {
 
@@ -9,7 +10,7 @@ function Home(props) {
     const likes = props.store.likes;
     const posts = props.store.posts;
 
-    // we likely will track zipcode and category here, somewhere in the props...
+    let {category} = useParams();
 
     // given some post, fetch the user
     function findUser(post) {
@@ -36,15 +37,16 @@ function Home(props) {
         <div>
             {posts
                 .sort((a,b)=>new Date(b.datetime) - new Date(a.datetime))
-                // post filtering...
-                // .filter(post => {
-                //     if(postId) {
-                //         return postId === post.id;
-                //     }
-                //     else {
-                //         return true;
-                //     }
-                // })
+                // post filtering by topic
+                .filter(post => {
+                    if(category) {
+                        return category.toLowerCase() == post.category.toLowerCase();
+                    }
+                    else {
+                        return true;
+                    }
+                })
+                // iterate through posts
                 .map(post =>
                     <PostPreview
                         key={post.id}
@@ -55,7 +57,6 @@ function Home(props) {
                         onLike={props.onLike}
                         onUnlike={props.onUnlike}
                         onComment={props.onComment}
-                        onExpand={props.onExpand}
                     />
                 )
             }

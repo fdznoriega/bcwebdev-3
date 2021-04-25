@@ -36,9 +36,8 @@ import {
 function App() {
 
   const [store, setStore] = useState(initialStore);
-  const history = useHistory("/");
+  // const history = useHistory("/");
 
-  // functions to manage data:
   // add like
   function addLike(postId) {
 
@@ -84,12 +83,6 @@ function App() {
     })
   }
 
-  function expandPost(postId) {
-    console.log("expand post");
-    // link react router via...history push?
-    // history.push("/post/" + postId)
-  }
-
   // add comment
   function addComment(postId, text) {
 
@@ -120,24 +113,36 @@ function App() {
         <Switch>
           
           {/* filter on a category */}
-          <Route path="/category/?category"></Route>
+          <Route path="/category/:category?">
+            <Home store={store}
+                  onLike={addLike}
+                  onUnlike={removeLike}
+                  onComment={addComment}
+            />
+          </Route>
           
           {/* go to new post */}
           <Route path="/newpost"></Route>
 
           {/* go to profile */}
-          <Route path="/profile/?userId"></Route>
+          <Route path="/profile/:userId?"></Route>
 
           {/* open a post */}
-          <Route path="/post/?postId"></Route>
+          <Route path="/post/:postId?">
+            <Post
+              store={store}
+              onLike={addLike}
+              onUnlike={removeLike}
+              onComment={addComment}
+            />
+          </Route>
 
           {/* go to home */}
-          <Route path="/">
+          <Route exact path="/">
             <Home store={store}
                   onLike={addLike}
                   onUnlike={removeLike}
                   onComment={addComment}
-                  onExpand={expandPost}
             />
           </Route>
 

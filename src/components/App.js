@@ -21,22 +21,10 @@ import {
   useHistory
 } from "react-router-dom";
 
-// possible routing...
-// sc.com/
-// sc.com/post/
-// sc.com/profile
-// sc.com/profile/userId
-// sc.com/category/water
-// sc.com/category/housing
-// sc.com/category/food
-// sc.com/settings
-// sc.com/login
-// sc.com/newpost
-
 function App() {
 
   const [store, setStore] = useState(initialStore);
-  // const history = useHistory("/");
+  const history = useHistory();
 
   // add like
   function addLike(postId) {
@@ -102,7 +90,7 @@ function App() {
 
   // cancel post
   function cancelPost() {
-    console.log('cancel post todo')
+    console.log("history object? " + history);
   }
 
   return (
@@ -117,15 +105,26 @@ function App() {
             <Home store={store}
                   onLike={addLike}
                   onUnlike={removeLike}
-                  onComment={addComment}
             />
           </Route>
 
           {/* go to new post */}
-          <Route path="/newpost"></Route>
+          <Route path="/newpost">
+            <NewPost 
+              store={store}
+              onPost={addPost}
+              onCancel={cancelPost}
+            />
+          </Route>
 
           {/* go to profile */}
-          <Route path="/profile/:userId?"></Route>
+          <Route path="/profile/:userId?">
+            <Profile
+              store={store}
+              onLike={addLike}
+              onUnlike={removeLike}
+            />
+          </Route>
 
           {/* open a post */}
           <Route path="/post/:postId?">

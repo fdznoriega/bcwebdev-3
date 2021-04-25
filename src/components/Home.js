@@ -56,7 +56,6 @@ function Home(props) {
                         likes={findLikes(post)}
                         onLike={props.onLike}
                         onUnlike={props.onUnlike}
-                        onComment={props.onComment}
                         isFullPost={false}
                     />
                 )

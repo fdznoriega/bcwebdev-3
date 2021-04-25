@@ -33,10 +33,6 @@ function PostPreview(props) {
         props.onUnlike(post.id);
     }
 
-    function handleExpandComments() {
-        console.log("expand posts and jump to comments")
-    }
-
     // renders like icon, which can be "liked" or "unliked"
     function renderLikeIcon() {
         if(props.likes.self) {

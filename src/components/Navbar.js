@@ -7,6 +7,15 @@ import {
 function Navbar() {
     return (
         <nav className={css.navbar}>
+            {/* home */}
+            <div className={css.navItem}>
+                <Link to="/">
+                    <button>
+                        <i className="fas fa-home"></i>
+                    </button>
+                </Link>
+                <p className={css.navText}>Home</p>
+            </div>
             {/* water */}
             <div className={css.navItem}>
                 <Link to="/category/water">
@@ -25,6 +34,15 @@ function Navbar() {
                 </Link>
                 <p className={css.navText}>Food</p>
             </div>
+            {/* housing */}
+            <div className={css.navItem}>
+                <Link to="/category/housing">
+                    <button>
+                        <i className="fas fa-warehouse"></i>
+                    </button>
+                </Link>
+                <p className={css.navText}>Housing</p>
+            </div>
             {/* new post */}
             <div className={css.navItem}>
                 <Link to="/newpost">
@@ -33,25 +51,6 @@ function Navbar() {
                     </button>
                 </Link>
                 <p className={css.navText}>New Post</p>
-            </div>
-            {/* housing */}
-            <div className={css.navItem}>
-                <Link to="/category/housing">
-                    <button>
-                        <i className="fas fa-home"></i>
-                    </button>
-                </Link>
-                <p className={css.navText}>Housing</p>
-            </div>
-
-            {/* wild card / home */}
-            <div className={css.navItem}>
-                <Link to="/">
-                    <button>
-                        <i className="fas fa-vr-cardboard"></i>
-                    </button>
-                </Link>
-                <p className={css.navText}>Wild Card</p>
             </div>
         </nav>
     );

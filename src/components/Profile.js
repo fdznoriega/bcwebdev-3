@@ -29,15 +29,15 @@ function Profile(props) {
     // find likes and comments...
     // given some post, fetch the comments
     function findComments(post) {
-        return comments.filter(comment => comment.postId === post.id)
+        return props.store.comments.filter(comment => comment.postId === post.id)
     }
 
     // given some post, fetch the likes
     function findLikes(post) {
-        let postLikes = likes.filter(like => like.postId === post.id);
+        let postLikes = props.store.likes.filter(like => like.postId === post.id);
 
         return {
-            self: postLikes.some(like => like.userId === currentUserId),
+            self: postLikes.some(like => like.userId === props.store.currentUserId),
             count: postLikes.length
         }
     }
@@ -63,6 +63,7 @@ function Profile(props) {
 
             {/* user recent posts? */}
             <section>
+                Recent Posts:
                 {
                     posts
                         .sort((a,b)=>new Date(b.datetime) - new Date(a.datetime))
@@ -73,7 +74,7 @@ function Profile(props) {
                                 user={user}
                                 post={p}
                                 comments={findComments(p)}
-                                likes={findLikes(post)}
+                                likes={findLikes(p)}
                                 onLike={props.onLike}
                                 onUnlike={props.onUnlike}
                                 onComment={props.onComment}

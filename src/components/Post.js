@@ -1,5 +1,6 @@
 import {useParams} from 'react-router-dom';
 import PostPreview from './PostPreview';
+import css from './Post.module.css';
 
 function Post(props) {
 
@@ -34,6 +35,9 @@ function Post(props) {
                     onComment={props.onComment}
                     expand={false}
                 />)}
+             <div className={css.comments_section}>
+                <p className={css.comments_header}>Comments</p>
+             </div>
         </div>
     )
 

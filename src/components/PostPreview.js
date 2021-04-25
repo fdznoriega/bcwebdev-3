@@ -41,6 +41,14 @@ function PostPreview(props) {
         }
     }
 
+    function findPreviewType() {
+        if(props.expand) {
+            return css.preview_background;
+        } else {
+            return css.preview_background_expanded;
+        }
+    }
+
     function renderExpandButton() {
         if(props.expand) {
             return (
@@ -52,46 +60,47 @@ function PostPreview(props) {
     }
 
     return (
-        <div className={css.preview_background}>
-            {/* FIRST COLUMN: COLOR */}
-            <div className={css.color_flex_item}></div>
+        <div>
+            <div className={findPreviewType()}>
+                {/* FIRST COLUMN: COLOR */}
+                <div className={css.color_flex_item}></div>
 
-            {/* SECOND COLUMN: CONTENT */}
-            <div className={css.content_flex_item}>
-                {/* user icon and title section */}
-                <section>
-                    <img src={props.user.photo} alt={"pic"} className={css.user_image}></img>
-                    <b>
-                        <p className={css.title}>{titlePreview}</p>
-                    </b>
-                </section>
+                {/* SECOND COLUMN: CONTENT */}
+                <div className={css.content_flex_item}>
+                    {/* user icon and title section */}
+                    <section>
+                        <img src={props.user.photo} alt={"pic"} className={css.user_image}></img>
+                        <b>
+                            <p className={css.title}>{titlePreview}</p>
+                        </b>
+                    </section>
 
-                <hr className={css.divide}></hr>
+                    <hr className={css.divide}></hr>
 
-                {/* body preview section */}
-                <section>
-                    <p>{bodyPreview}</p>
-                </section>
+                    {/* body preview section */}
+                    <section>
+                        <p>{bodyPreview}</p>
+                    </section>
 
-                {/* likes and comments */}
-                <section>
-                    <div className={css.like_info}>
-                        <span>{likeCount}</span>
-                        {renderLikeIcon()}
-                    </div>
+                    {/* likes and comments */}
+                    <section>
+                        <div className={css.like_info}>
+                            <span>{likeCount}</span>
+                            {renderLikeIcon()}
+                        </div>
 
-                    <div className={css.comment_info}>
-                        <span>{commentCount}</span>
-                        <i className="fas fa-comment"></i>
-                    </div>
-                </section>
+                        <div className={css.comment_info}>
+                            <span>{commentCount}</span>
+                            <i className="fas fa-comment"></i>
+                        </div>
+                    </section>
 
+                </div>
+                {/* THIRD COLUMN: EXPAND POST BUTTON */}
+                <div className={css.expand_flex_item}>
+                    {renderExpandButton()}
+                </div>
             </div>
-            {/* THIRD COLUMN: EXPAND POST BUTTON */}
-            <div className={css.expand_flex_item}>
-                {renderExpandButton()}
-            </div>
-
         </div>
     );
 }

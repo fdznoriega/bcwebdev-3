@@ -15,11 +15,10 @@ function Profile(props) {
                 <p>Username</p>
                 <p>Bio</p>
             </section>
-            
+
             <section>{renderThumbnails()}</section>
         </div>
     );
-
 }
 
 export default Profile;

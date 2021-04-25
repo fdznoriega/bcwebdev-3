@@ -1,5 +1,6 @@
 import css from './PostPreview.module.css';
 import {Link} from 'react-router-dom';
+import publicUrl from '../utils/publicUrl';
 
 function PostPreview(props) {
 
@@ -78,7 +79,7 @@ function PostPreview(props) {
                 <div className={css.content_flex_item}>
                     {/* user icon and title section */}
                     <section>
-                        <img src={props.user.photo} alt={"pic"} className={css.user_image}></img>
+                        <img src={publicUrl(props.user.photo)} alt={"pic"} className={css.user_image}></img>
                         <b>
                             <p className={css.title}>{title}</p>
                         </b>

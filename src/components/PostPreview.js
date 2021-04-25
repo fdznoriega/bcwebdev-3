@@ -7,9 +7,18 @@ function PostPreview(props) {
     const post = props.post;
     const maxChars = 100;
 
-    // if title/body is more than max chars, chop it to max chars and "..."
-    let titlePreview = post.title.length > maxChars ? post.title.substring(0, maxChars - 4) + "..." : post.title;
-    let bodyPreview = post.body.length > maxChars ? post.body.substring(0, maxChars - 4) + "..." : post.body;
+    // placeholder title and body which will be shrunk if we're in preview mode
+    let title;
+    let body;
+
+    if(props.isFullPost) {
+        title = post.title;
+        body = post.body;
+    }
+    else {
+        title = post.title.length > maxChars ? post.title.substring(0, maxChars - 4) + "..." : post.title;
+        body = post.body.length > maxChars ? post.body.substring(0, maxChars - 4) + "..." : post.body;
+    }
 
     // get num of likes, num of comments
     let likeCount = props.likes.count;
@@ -42,7 +51,7 @@ function PostPreview(props) {
     }
 
     function findPreviewType() {
-        if(props.expand) {
+        if(!props.isFullPost) {
             return css.preview_background;
         } else {
             return css.preview_background_expanded;
@@ -50,7 +59,7 @@ function PostPreview(props) {
     }
 
     function renderExpandButton() {
-        if(props.expand) {
+        if(!props.isFullPost) {
             return (
               <Link to= {"/post/" + post.id}>
                   <i className="fas fa-angle-right fa-2x arrow"></i>
@@ -71,7 +80,7 @@ function PostPreview(props) {
                     <section>
                         <img src={props.user.photo} alt={"pic"} className={css.user_image}></img>
                         <b>
-                            <p className={css.title}>{titlePreview}</p>
+                            <p className={css.title}>{title}</p>
                         </b>
                     </section>
 
@@ -79,7 +88,7 @@ function PostPreview(props) {
 
                     {/* body preview section */}
                     <section>
-                        <p>{bodyPreview}</p>
+                        <p>{body}</p>
                     </section>
 
                     {/* likes and comments */}

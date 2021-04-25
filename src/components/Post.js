@@ -7,12 +7,12 @@ function Post(props) {
     let {postId} = useParams();
     console.log(postId);
 
-    function findComments(post) {
-        return props.store.comments.filter(comment => comment.postId === post.id)
+    function findComments(p) {
+        return props.store.comments.filter(comment => comment.postId === p.id)
     }
 
-    function findLikes(post) {
-        let postLikes = props.store.likes.filter(like => like.postId === post.id);
+    function findLikes(p) {
+        let postLikes = props.store.likes.filter(like => like.postId === p.id);
 
         return {
             self: postLikes.some(like => like.userId === props.store.currentUserId),
@@ -20,45 +20,43 @@ function Post(props) {
         }
     }
 
-    let matchedPost = props.store.posts.filter(post => post.id===postId)[0];
+    let matchedPost = props.store.posts.filter(p => p.id===postId)[0];
     if (!matchedPost) return (<p>404: Could not find post</p>);
 
     const post = matchedPost;
+    const likes = findLikes(post);
     const comments = findComments(post);
-
-    function renderComments(){
-        return(
-            comments.map((comment, i) => {
-                
-                return( 
-                    <div key={i}>
-                        <p>{comment.userId}</p>
-                        <p>{comment.text}</p>
-                        <p>{comment.datetime}</p>
-                    </div> 
-                );
-            })
-        );
-    }
 
     return (
         <div>
-            {props.store.posts.filter(post => post.id === postId)
-            .map(post =>
-                <PostPreview
-                    key={post.id}
-                    user={post.userId}
-                    post={post}
-                    comments={findComments(post)}
-                    likes={findLikes(post)}
-                    onLike={props.onLike}
-                    onUnlike={props.onUnlike}
-                    onComment={props.onComment}
-                    expand={false}
-                />)}
+            {/* use post preview and pass in isFullPost as true */}
+            <PostPreview
+                key={post.id}
+                user={post.userId}
+                post={post}
+                comments={comments}
+                likes={likes}
+                onLike={props.onLike}
+                onUnlike={props.onUnlike}
+                onComment={props.onComment}
+                isFullPost={true}
+            />
              <div className={css.comments_section}>
                 <hr className={css.comment_divide}></hr>
-                <div className={css.comments_header}>{renderComments()}</div>
+                <div className={css.comments_header}>
+                    {
+                        comments.map((comment, i) => {
+                            return( 
+                                <div key={i}>
+                                    <p>{comment.userId}</p>
+                                    <p>{comment.text}</p>
+                                    <p>{comment.datetime}</p>
+                                </div> 
+                            );
+                        })
+                    }
+                
+                </div>
              </div>
         </div>
     )

@@ -57,7 +57,7 @@ function Home(props) {
                         onLike={props.onLike}
                         onUnlike={props.onUnlike}
                         onComment={props.onComment}
-                        expand={true}
+                        isFullPost={false}
                     />
                 )
             }

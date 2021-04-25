@@ -93,6 +93,27 @@ function App() {
     console.log("history object? " + history);
   }
 
+  // find users, find comments, and find likes
+  // given some post, fetch the user
+  function findUser(post) {
+    return store.users.filter(user => user.id === post.id)
+  }
+
+  // given some post, fetch the comments
+  function findComments(post) {
+      return store.comments.filter(comment => comment.postId === post.id)
+  }
+
+  // given some post, fetch the likes
+  function findLikes(post) {
+      let postLikes = store.likes.filter(like => like.postId === post.id);
+
+      return {
+          self: postLikes.some(like => like.userId === store.currentUserId),
+          count: postLikes.length
+      }
+  }
+
   return (
     <div className="App">
       {/* routing */}
@@ -105,6 +126,9 @@ function App() {
             <Home store={store}
                   onLike={addLike}
                   onUnlike={removeLike}
+                  findUser={findUser}
+                  findLikes={findLikes}
+                  findComments={findComments}
             />
           </Route>
 
@@ -123,6 +147,8 @@ function App() {
               store={store}
               onLike={addLike}
               onUnlike={removeLike}
+              findLikes={findLikes}
+              findComments={findComments}
             />
           </Route>
 
@@ -142,6 +168,9 @@ function App() {
                   onLike={addLike}
                   onUnlike={removeLike}
                   onComment={addComment}
+                  findUser={findUser}
+                  findLikes={findLikes}
+                  findComments={findComments}
             />
           </Route>
 

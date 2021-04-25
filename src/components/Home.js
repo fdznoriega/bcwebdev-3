@@ -4,33 +4,9 @@ import {useParams} from 'react-router-dom';
 
 function Home(props) {
 
-    const currentUserId = props.store.currentUserId;
-    const users = props.store.users;
-    const comments = props.store.comments;
-    const likes = props.store.likes;
     const posts = props.store.posts;
 
     let {category} = useParams();
-
-    // given some post, fetch the user
-    function findUser(post) {
-        return users.filter(user => user.id === post.id)
-    }
-
-    // given some post, fetch the comments
-    function findComments(post) {
-        return comments.filter(comment => comment.postId === post.id)
-    }
-
-    // given some post, fetch the likes
-    function findLikes(post) {
-        let postLikes = likes.filter(like => like.postId === post.id);
-
-        return {
-            self: postLikes.some(like => like.userId === currentUserId),
-            count: postLikes.length
-        }
-    }
 
     // stacked posts, sorted by time published
     return (
@@ -50,10 +26,10 @@ function Home(props) {
                 .map(post =>
                     <PostPreview
                         key={post.id}
-                        user={findUser(post)}
+                        user={props.findUser(post)}
                         post={post}
-                        comments={findComments(post)}
-                        likes={findLikes(post)}
+                        comments={props.findComments(post)}
+                        likes={props.findLikes(post)}
                         onLike={props.onLike}
                         onUnlike={props.onUnlike}
                         isFullPost={false}

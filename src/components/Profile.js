@@ -26,22 +26,6 @@ function Profile(props) {
         user = props.store.users.filter(u => u.id === props.store.currentUserId)[0];
     }
 
-    // find likes and comments...
-    // given some post, fetch the comments
-    function findComments(post) {
-        return props.store.comments.filter(comment => comment.postId === post.id)
-    }
-
-    // given some post, fetch the likes
-    function findLikes(post) {
-        let postLikes = props.store.likes.filter(like => like.postId === post.id);
-
-        return {
-            self: postLikes.some(like => like.userId === props.store.currentUserId),
-            count: postLikes.length
-        }
-    }
-
     // user is now defined so we can grab posts
     const posts = props.store.posts.filter(p => p.userId === user.id);
 
@@ -73,8 +57,8 @@ function Profile(props) {
                                 key={p.id}
                                 user={user}
                                 post={p}
-                                comments={findComments(p)}
-                                likes={findLikes(p)}
+                                comments={props.findComments(p)}
+                                likes={props.findLikes(p)}
                                 onLike={props.onLike}
                                 onUnlike={props.onUnlike}
                                 onComment={props.onComment}

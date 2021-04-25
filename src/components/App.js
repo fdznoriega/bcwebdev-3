@@ -111,7 +111,7 @@ function App() {
       <Router basename={process.env.PUBLIC_URL}>
         {/* switch */}
         <Switch>
-          
+
           {/* filter on a category */}
           <Route path="/category/:category?">
             <Home store={store}
@@ -120,7 +120,7 @@ function App() {
                   onComment={addComment}
             />
           </Route>
-          
+
           {/* go to new post */}
           <Route path="/newpost"></Route>
 
@@ -152,8 +152,8 @@ function App() {
         <Navbar/>
       </Router>
 
-      
-      
+
+
     </div>
   );
 }

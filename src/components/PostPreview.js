@@ -75,7 +75,7 @@ function PostPreview(props) {
                         </b>
                     </section>
 
-                    <hr className={css.divide}></hr>
+                    <hr className={css.title_divide}></hr>
 
                     {/* body preview section */}
                     <section>
@@ -94,6 +94,7 @@ function PostPreview(props) {
                             <i className="fas fa-comment"></i>
                         </div>
                     </section>
+
 
                 </div>
                 {/* THIRD COLUMN: EXPAND POST BUTTON */}

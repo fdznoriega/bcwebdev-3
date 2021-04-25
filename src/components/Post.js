@@ -36,7 +36,8 @@ function Post(props) {
                     expand={false}
                 />)}
              <div className={css.comments_section}>
-                <p className={css.comments_header}>Comments</p>
+                <hr className={css.comment_divide}></hr>
+                <p className={css.comments_header}>Comments:</p>
              </div>
         </div>
     )

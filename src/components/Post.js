@@ -20,6 +20,27 @@ function Post(props) {
         }
     }
 
+    let matchedPost = props.store.posts.filter(post => post.id===postId)[0];
+    if (!matchedPost) return (<p>404: Could not find post</p>);
+
+    const post = matchedPost;
+    const comments = findComments(post);
+
+    function renderComments(){
+        return(
+            comments.map((comment, i) => {
+                
+                return( 
+                    <div key={i}>
+                        <p>{comment.userId}</p>
+                        <p>{comment.text}</p>
+                        <p>{comment.datetime}</p>
+                    </div> 
+                );
+            })
+        );
+    }
+
     return (
         <div>
             {props.store.posts.filter(post => post.id === postId)
@@ -37,7 +58,7 @@ function Post(props) {
                 />)}
              <div className={css.comments_section}>
                 <hr className={css.comment_divide}></hr>
-                <p className={css.comments_header}>Comments:</p>
+                <div className={css.comments_header}>{renderComments()}</div>
              </div>
         </div>
     )

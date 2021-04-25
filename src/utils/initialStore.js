@@ -81,6 +81,18 @@ let initialStore = {
             text:"Check out our website! https://www.gbfb.org/",
             datetime:"2020-02-09T22:51:40Z"
         },
+        {
+            userId:"anthony",
+            postId:"post-1",
+            text:"Thanks!",
+            datetime:"2020-02-09T22:53:40Z"
+        },
+        {
+            userId:"saundra",
+            postId:"post-3",
+            text:"This is a bit far from me now. What's going to happen to the old location?",
+            datetime:"2020-02-09T22:54:40Z"
+        }
     ],
     likes: [
         {

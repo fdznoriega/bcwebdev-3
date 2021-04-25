@@ -43,22 +43,22 @@ function Post(props) {
             />
              <div className={css.comments_section}>
                 <hr className={css.comment_divide}></hr>
-                <div className={css.comments_header}>
+                <p className={css.comments_header}>Comments:</p>
+
                     {
                         comments.map((comment, i) => {
-                            return( 
+                            return(
                                 <div key={i}>
                                     <p>{comment.userId}</p>
                                     <p>{comment.text}</p>
                                     <p>{comment.datetime}</p>
-                                </div> 
+                                </div>
                             );
                         })
                     }
-                
+
                 </div>
              </div>
-        </div>
     )
 
 }

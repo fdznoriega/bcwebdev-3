@@ -41,6 +41,16 @@ function PostPreview(props) {
         }
     }
 
+    function renderExpandButton() {
+        if(props.expand) {
+            return (
+              <Link to= {"/post/" + post.id}>
+                  <i className="fas fa-angle-right fa-2x arrow"></i>
+              </Link>
+            )
+        }
+    }
+
     return (
         <div className={css.preview_background}>
             {/* FIRST COLUMN: COLOR */}
@@ -79,10 +89,7 @@ function PostPreview(props) {
             </div>
             {/* THIRD COLUMN: EXPAND POST BUTTON */}
             <div className={css.expand_flex_item}>
-                <Link to= {"/post/" + post.id}>
-                    <i className="fas fa-angle-right fa-2x arrow"></i>
-                </Link>
-                
+                {renderExpandButton()}
             </div>
 
         </div>

@@ -12,7 +12,7 @@ function Home(props) {
     // stacked posts, sorted by time published
     return (
         <div>
-            <p className={css.home_title}>Home</p>
+            <p className={css.home_title}>Your Feed</p>
             {posts
                 .sort((a,b)=>new Date(b.datetime) - new Date(a.datetime))
                 // post filtering by topic

@@ -35,7 +35,7 @@ function NewPost(props) {
 
     return (
         <form onSubmit={handleSubmit} onCancel={handleCancel}>
-          <p className={css.form_title}>Create New Post</p>
+          <p className={css.form_title}>New Post</p>
             <div className={css.form_container}>
                 <label>
                     Choose a category:

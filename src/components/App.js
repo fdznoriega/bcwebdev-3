@@ -17,14 +17,12 @@ import uniqueId from '../utils/uniqueId';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  useHistory
+  Route
 } from "react-router-dom";
 
 function App() {
 
   const [store, setStore] = useState(initialStore);
-  const history = useHistory();
 
   // add like
   function addLike(postId) {
@@ -88,11 +86,6 @@ function App() {
     });
   }
 
-  // cancel post
-  function cancelPost() {
-    console.log("history object? " + history);
-  }
-
   // find users, find comments, and find likes
   // given some post, fetch the user
   function findUser(post) {
@@ -137,7 +130,6 @@ function App() {
             <NewPost 
               store={store}
               onPost={addPost}
-              onCancel={cancelPost}
             />
           </Route>
 

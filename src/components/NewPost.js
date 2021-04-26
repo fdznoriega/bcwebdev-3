@@ -1,18 +1,69 @@
-
+import {useState} from "react"
+import {useHistory} from "react-router-dom";
 
 function NewPost(props) {
     
+    const history = useHistory();
+    const [title, setTitle] = useState('');
+    const [body, setBody] = useState('');
+    const [category, setCategory] = useState('');
+    const [error, setError] = useState('');
 
+    function handleTitle(e) {
+        setTitle(e.target.value)
+    }
+    
+    function handleBody(e) {
+        setBody(e.target.value);
+    }
+
+    function handleCategory(e) {
+        setCategory(e.target.value);
+    }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        if(title === '' || body === '' || category === '') { return; }
+        console.log('posting');
+        props.onPost(title, body, category);
+    }
+
+    function handleCancel() {
+        history.push("/");
+    }
 
     return (
-        <div>
-            {/* cancel and post actions */}
-            <div>
-                <button onClick={props.onCancel}>Cancel</button>
-                <button onClick={props.onPost}>Post</button>
-            </div>
+        <form onSubmit={handleSubmit} onCancel={handleCancel}>
+            <label>
+                Choose a category:
+                <select value={category} onChange={handleCategory}>
+                    <option value="water">Water</option>
+                    <option value="food">Food</option>
+                    <option value="housing">Housing</option>
+                </select>
+            </label>
+            <label>
+                <input
+                    type="title"
+                    name="title"
+                    placeholder="title"
+                    value={title}
+                    onChange={handleTitle}
+                />
+            </label>
+            <label>
+                <input
+                    type="body"
+                    name="body"
+                    placeholder="body"
+                    value={body}
+                    onChange={handleBody}
+                />
+            </label>
+            <input type="submit" value="Submit" />
+            <button onClick={handleCancel}>Cancel</button>
+        </form>
             
-        </div>
         
 
     );

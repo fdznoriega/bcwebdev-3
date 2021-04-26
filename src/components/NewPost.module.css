@@ -24,6 +24,11 @@ textarea {
 
 input {
   margin-right: 10px;
+  font-family: 'Gentium Book Basic', serif;
+}
+
+button {
+  font-family: 'Gentium Book Basic', serif;
 }
 
 .text_header {

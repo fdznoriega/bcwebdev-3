@@ -6,7 +6,7 @@ function NewPost(props) {
 
     const history = useHistory();
     const [title, setTitle] = useState('');
-    const [body, setBody] = useState('');
+    const [text, setText] = useState('');
     const [category, setCategory] = useState('');
     const [error, setError] = useState('');
 
@@ -14,8 +14,8 @@ function NewPost(props) {
         setTitle(e.target.value)
     }
 
-    function handleBody(e) {
-        setBody(e.target.value);
+    function handleText(e) {
+        setText(e.target.value);
     }
 
     function handleCategory(e) {
@@ -24,9 +24,9 @@ function NewPost(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        if(title === '' || body === '' || category === '') { return; }
+        if(title === '' || text === '' || category === '') { return; }
         console.log('posting');
-        props.onPost(title, body, category);
+        props.onPost(title, text, category);
     }
 
     function handleCancel() {
@@ -47,7 +47,7 @@ function NewPost(props) {
                 </label>
                 <label>
                     Title:
-                    <input
+                    <input className={css.title_input}
                         type="title"
                         name="title"
                         placeholder="title"
@@ -56,12 +56,13 @@ function NewPost(props) {
                     />
                 </label>
                 <label>
-                    <input
-                        type="body"
-                        name="body"
-                        placeholder="body"
-                        value={body}
-                        onChange={handleBody}
+                    <p className={css.text_header}>What's Going On?</p>
+                    <textarea
+                        type="text"
+                        name="text"
+                        placeholder="text"
+                        value={text}
+                        onChange={handleText}
                     />
                 </label>
                 <input type="submit" value="Submit" />

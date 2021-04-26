@@ -16,6 +16,15 @@ function Navbar() {
                 </Link>
                 <p className={css.navText}>Home</p>
             </div>
+            {/* new post */}
+            <div className={css.navItem}>
+                <Link to="/newpost">
+                    <button>
+                        <i className="fas fa-plus-square"></i>
+                    </button>
+                </Link>
+                <p className={css.navText}>New Post</p>
+            </div>
             {/* water */}
             <div className={css.navItem}>
                 <Link to="/category/water">
@@ -42,15 +51,6 @@ function Navbar() {
                     </button>
                 </Link>
                 <p className={css.navText}>Housing</p>
-            </div>
-            {/* new post */}
-            <div className={css.navItem}>
-                <Link to="/newpost">
-                    <button>
-                        <i className="fas fa-plus-square"></i>
-                    </button>
-                </Link>
-                <p className={css.navText}>New Post</p>
             </div>
         </nav>
     );

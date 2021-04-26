@@ -7,7 +7,7 @@ function Profile(props) {
     const history = useHistory();
 
     let user;
-    
+
     let {userId} = useParams();
 
     if(userId) {
@@ -52,8 +52,8 @@ function Profile(props) {
                     posts
                         .sort((a,b)=>new Date(b.datetime) - new Date(a.datetime))
                         .slice(0, 3)
-                        .map(p => 
-                            <PostPreview 
+                        .map(p =>
+                            <PostPreview
                                 key={p.id}
                                 user={user}
                                 post={p}
@@ -69,7 +69,7 @@ function Profile(props) {
             </section>
 
 
-            
+
         </div>
     );
 }

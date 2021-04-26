@@ -1,6 +1,7 @@
 import {useParams} from 'react-router-dom';
 import PostPreview from './PostPreview';
 import css from './Post.module.css';
+import publicUrl from '../utils/publicUrl';
 
 function Post(props) {
 
@@ -49,9 +50,10 @@ function Post(props) {
                         comments.map((comment, i) => {
                             return(
                                 <div key={i}>
-                                    <p>{comment.userId}</p>
-                                    <p>{comment.text}</p>
-                                    <p>{comment.datetime}</p>
+                                    <img className={css.user_image} src={"/assets/default.png"}></img>
+                                    <p className={css.user}>{comment.userId}</p>
+                                    <p className={css.user_text}>{comment.text}</p>
+                                    <p className={css.user_date}>{comment.datetime}</p>
                                 </div>
                             );
                         })

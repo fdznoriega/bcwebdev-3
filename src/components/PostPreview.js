@@ -62,7 +62,7 @@ function PostPreview(props) {
                   <i className="fas fa-angle-right fa-2x arrow"></i>
               </Link>
             )
-        }
+        } 
     }
 
     return (

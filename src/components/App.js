@@ -89,7 +89,7 @@ function App() {
   // find users, find comments, and find likes
   // given some post, fetch the user
   function findUser(post) {
-    return store.users.filter(user => user.id === post.id)
+    return store.users.filter(user => user.id === post.userId)[0];
   }
 
   // given some post, fetch the comments

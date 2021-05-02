@@ -75,14 +75,20 @@ function PostPreview(props) {
                 <div className={css.content_flex_item}>
                     {/* user icon and title section */}
                     <section className={css.content_header}>
-                        <img
-                            className={css.user_image}
-                            src={publicUrl(props.user.photo)}
-                            alt={props.user.id}
-                        />
-                        <b className={css.title}>
-                            <p className={css.title_text}>{title}</p>
-                        </b>
+                        <Link to={"/profile/" + props.user.id}>
+                            <img
+                                className={css.user_image}
+                                src={publicUrl(props.user.photo)}
+                                alt={props.user.id}
+                            />
+                        </Link>
+
+                        <Link to={"/post/" + post.id}>
+                            <b className={css.title}>
+                                <p className={css.title_text}>{title}</p>
+                            </b>
+                        </Link>
+                        
                     </section>
 
                     <hr className={css.title_divide}></hr>
@@ -101,7 +107,9 @@ function PostPreview(props) {
 
                         <div className={css.comment_info}>
                             <span>{commentCount}</span>
-                            <i className="fas fa-comment"></i>
+                            <Link to={"/post/" + post.id}>
+                                <i className="fas fa-comment"></i>
+                            </Link>
                         </div>
                     </section>
 

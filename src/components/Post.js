@@ -37,8 +37,12 @@ function Post(props) {
                         comments.map((comment, i) => {
                             return(
                                 <div key={i}>
-                                    <img className={css.user_image} src={publicUrl("/assets/default.png")}></img>
-                                    <p className={css.user}>{comment.userId}</p>
+                                    <div className={css.comment}>
+                                        <img className={css.user_image} src={publicUrl("/assets/default.png")}></img>
+                                        <b>
+                                            <p className={css.user}>{comment.userId}</p>
+                                        </b>
+                                    </div>
                                     <p className={css.user_text}>{comment.text}</p>
                                     <p className={css.user_date}>{comment.datetime}</p>
                                 </div>

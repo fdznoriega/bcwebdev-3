@@ -22,7 +22,7 @@ let initialStore = {
             type: UserType.User,
             name: "Anthony Stevens",
             bio: "",
-            photo: "/assets/default.png",
+            photo: "/assets/anthony.png",
             zipcode: "33764"
         },
         {
@@ -31,7 +31,7 @@ let initialStore = {
             type: UserType.Organization,
             name: "The Greater Boston Food Bank",
             bio: "Together, we can end hunger here",
-            photo: "/assets/default.png",
+            photo: "/assets/foodbank.png",
             zipcode: "02111"
         },
         {
@@ -40,7 +40,7 @@ let initialStore = {
             type: UserType.User,
             name: "Saundra Mills",
             bio: "",
-            photo: "/assets/default.png",
+            photo: "/assets/saundra.png",
             zipcode: "02118"
         }
     ],

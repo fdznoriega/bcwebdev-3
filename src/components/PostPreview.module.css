@@ -37,18 +37,14 @@ span {
   height: 25px;
 }
 
-.title {
-  display: inline;
-  margin-left: 10px;
-}
-
 .title_text {
   margin: 0;
   margin-top: 5px;
+  margin-left: 7.5px;
 }
 
 .title_divide {
-  margin: 10px 0 5px;
+  margin: 5px 0;
 }
 
 .like_info, .comment_info {
@@ -69,7 +65,8 @@ span {
 .content_flex_item {
   flex-basis: 88%;
   text-align: left;
-  padding: 1%
+  padding: 1%;
+  padding-top: 10px;
 }
 
 .expand_flex_item {

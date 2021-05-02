@@ -127,7 +127,7 @@ function App() {
 
           {/* go to new post */}
           <Route path="/newpost">
-            <NewPost 
+            <NewPost
               store={store}
               onPost={addPost}
             />
@@ -151,6 +151,13 @@ function App() {
               onLike={addLike}
               onUnlike={removeLike}
               onComment={addComment}
+            />
+          </Route>
+
+          {/* go to profile*/}
+          <Route path="/profile">
+            <Profile
+              store={store}
             />
           </Route>
 

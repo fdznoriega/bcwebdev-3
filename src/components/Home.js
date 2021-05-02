@@ -2,6 +2,9 @@ import React from 'react';
 import PostPreview from './PostPreview';
 import {useParams} from 'react-router-dom';
 import css from './Home.module.css';
+import {
+    Link
+} from "react-router-dom";
 
 function Home(props) {
 
@@ -12,6 +15,11 @@ function Home(props) {
     // stacked posts, sorted by time published
     return (
         <div>
+            <p className={css.profile}>
+                <Link to="/profile">
+                    <i className="fas fa-user-circle"></i>
+                </Link>
+            </p>
             <p className={css.home_title}>Your Feed</p>
             {posts
                 .sort((a,b)=>new Date(b.datetime) - new Date(a.datetime))

@@ -1,5 +1,17 @@
+p i {
+  color: green;
+  margin-right: 2%;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.profile {
+  text-align: right;
+}
+
 .home_title {
   font-weight: bold;
   font-size: 2rem;
   text-align: center;
+  margin-top: 0;
 }

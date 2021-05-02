@@ -1,4 +1,4 @@
-import { useParams, useHistory} from "react-router-dom";
+import {useParams, useHistory} from "react-router-dom";
 import PostPreview from "./PostPreview";
 
 

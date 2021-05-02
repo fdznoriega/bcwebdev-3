@@ -10,8 +10,7 @@ const UserType = {
 const Category = {
     Water: "Water",
     Housing: "Housing",
-    Food: "Food",
-    None: "None"
+    Food: "Food"
 }
 
 let initialStore = {

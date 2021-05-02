@@ -65,11 +65,26 @@ function PostPreview(props) {
         }
     }
 
+    // takes in post
+    function renderCategoryButton(p) {
+
+        switch (p.category) {
+            case "Housing":
+                return <span className="fas fa-warehouse"></span>;
+            case "Water":
+                return <span className="fas fa-tint"></span>;
+            case "Food": 
+                return <span className="fas fa-utensils"></span>;
+        }
+    }
+
     return (
         <div>
             <div className={findPreviewType()}>
                 {/* FIRST COLUMN: COLOR */}
-                <div className={css.color_flex_item}></div>
+                <div className={css.color_flex_item}>
+                    {renderCategoryButton(post)}
+                </div>
 
                 {/* SECOND COLUMN: CONTENT */}
                 <div className={css.content_flex_item}>

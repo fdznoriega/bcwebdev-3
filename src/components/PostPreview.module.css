@@ -27,13 +27,23 @@ span {
   margin-bottom: 0;
 }
 
+.content_header {
+  display: flex;
+}
+
 .user_image {
-  margin-top: 0;
+  width: 25px;
+  height: 25px;
 }
 
 .title {
   display: inline;
   margin-left: 10px;
+}
+
+.title_text {
+  margin: 0;
+  margin-top: 5px;
 }
 
 .title_divide {

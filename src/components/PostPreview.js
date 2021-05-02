@@ -62,7 +62,7 @@ function PostPreview(props) {
                   <i className="fas fa-angle-right fa-2x arrow"></i>
               </Link>
             )
-        } 
+        }
     }
 
     return (
@@ -74,14 +74,14 @@ function PostPreview(props) {
                 {/* SECOND COLUMN: CONTENT */}
                 <div className={css.content_flex_item}>
                     {/* user icon and title section */}
-                    <section>
-                        <img 
-                            className={css.user_image} 
+                    <section className={css.content_header}>
+                        <img
+                            className={css.user_image}
                             src={publicUrl(props.user.photo)}
                             alt={props.user.id}
                         />
-                        <b>
-                            <p className={css.title}>{title}</p>
+                        <b className={css.title}>
+                            <p className={css.title_text}>{title}</p>
                         </b>
                     </section>
 

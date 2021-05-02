@@ -99,11 +99,11 @@ function PostPreview(props) {
                         </Link>
 
                         <Link to={"/post/" + post.id}>
-                            <b className={css.title}>
+                            <b>
                                 <p className={css.title_text}>{title}</p>
                             </b>
                         </Link>
-                        
+
                     </section>
 
                     <hr className={css.title_divide}></hr>

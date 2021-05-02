@@ -2,3 +2,7 @@ a, a:visited{
     text-decoration: none;
     color: black;
   }
+
+  .cat { 
+      color: #F0F0F0;
+   }

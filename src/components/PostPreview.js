@@ -70,11 +70,11 @@ function PostPreview(props) {
 
         switch (p.category) {
             case "Housing":
-                return <span className="fas fa-warehouse"></span>;
+                return <span className="fas fa-warehouse cat"></span>;
             case "Water":
-                return <span className="fas fa-tint"></span>;
+                return <span className="fas fa-tint cat"></span>;
             case "Food": 
-                return <span className="fas fa-utensils"></span>;
+                return <span className="fas fa-utensils cat"></span>;
         }
     }
 

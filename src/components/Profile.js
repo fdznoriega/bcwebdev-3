@@ -36,7 +36,7 @@ function Profile(props) {
             <section>
                 {/* photo and user id */}
                 <div>
-                    <p>{user.id}</p>
+                    <p className={css.username}>{user.id}</p>
                     <img className={css.profile_img} src={publicUrl(user.photo)}></img>
                 </div>
 
@@ -46,7 +46,9 @@ function Profile(props) {
                 </div>
             </section>
 
-            {/* user recent posts? */}
+            <hr className={css.profile_divide}></hr>
+
+            {/* user recent posts */}
             <section>
                 <p className={css.profile_recent}>Recent Posts:</p>
                 {

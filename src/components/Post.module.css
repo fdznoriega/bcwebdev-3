@@ -25,6 +25,11 @@ body {
   margin-left: 10px;
 }
 
+.user_image {
+  width: 25px;
+  height: 25px;
+}
+
 .user_text {
   margin-left: 50px;
 }

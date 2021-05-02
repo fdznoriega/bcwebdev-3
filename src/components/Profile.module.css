@@ -3,13 +3,22 @@
   text-align: center;
 }
 
+.username {
+  font-weight: bold;
+}
+
 .profile_img {
   width: 100px;
   height: 100px;
 }
 
+.profile_divide {
+  margin-top: 50px;
+  width: 50%;
+}
+
 .profile_recent {
   text-align: left;
   margin-left: 3%;
-  margin-top: 50px;
+  margin-top: 20px;
 }

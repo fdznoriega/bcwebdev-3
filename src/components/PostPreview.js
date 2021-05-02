@@ -75,7 +75,11 @@ function PostPreview(props) {
                 <div className={css.content_flex_item}>
                     {/* user icon and title section */}
                     <section>
-                        <img className={css.user_image} src={publicUrl(props.user.photo)}></img>
+                        <img 
+                            className={css.user_image} 
+                            src={publicUrl(props.user.photo)}
+                            alt={props.user.id}
+                        />
                         <b>
                             <p className={css.title}>{title}</p>
                         </b>

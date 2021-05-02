@@ -151,6 +151,9 @@ function App() {
               onLike={addLike}
               onUnlike={removeLike}
               onComment={addComment}
+              findUser={findUser}
+              findLikes={findLikes}
+              findComments={findComments}
             />
           </Route>
 

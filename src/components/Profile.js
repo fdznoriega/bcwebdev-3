@@ -1,6 +1,7 @@
 import {useParams, useHistory} from "react-router-dom";
 import PostPreview from "./PostPreview";
-
+import publicUrl from '../utils/publicUrl';
+import css from './Profile.module.css';
 
 function Profile(props) {
 
@@ -30,24 +31,24 @@ function Profile(props) {
     const posts = props.store.posts.filter(p => p.userId === user.id);
 
     return (
-        <div>
+        <div className={css.profile}>
             {/* user info */}
             <section>
                 {/* photo and user id */}
                 <div>
-                    <p>{user.photo}</p>
                     <p>{user.id}</p>
+                    <img className={css.profile_img} src={publicUrl(user.photo)}></img>
                 </div>
 
                 {/* bio */}
                 <div>
-                    <p>{user.bio}</p>
+                    <p>Passionate about helping others. Looking for food banks!</p>
                 </div>
             </section>
 
             {/* user recent posts? */}
             <section>
-                Recent Posts:
+                <p className={css.profile_recent}>Recent Posts:</p>
                 {
                     posts
                         .sort((a,b)=>new Date(b.datetime) - new Date(a.datetime))

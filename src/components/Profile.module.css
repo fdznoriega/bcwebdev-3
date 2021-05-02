@@ -1,0 +1,15 @@
+.profile {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.profile_img {
+  width: 100px;
+  height: 100px;
+}
+
+.profile_recent {
+  text-align: left;
+  margin-left: 3%;
+  margin-top: 50px;
+}

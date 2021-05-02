@@ -5,9 +5,6 @@
 [Lowest Priority = 3]
 
 ### Home.js
-* 1: Clicking on title -> post.js
-* 1: Clicking on comment button -> post.js
-*  1: Clicking on a user profile pic -> profile.js
 * 2: Filter based on user type
 * 3: Filter based on zip code??
 

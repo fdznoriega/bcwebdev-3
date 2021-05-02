@@ -22,8 +22,11 @@ function Profile(props) {
             // return nothing from this component
             return null;
         }
+        // update user if we found them
+        user = potentialUser;
     }
     else {
+        // update user to be current user
         user = props.store.users.filter(u => u.id === props.store.currentUserId)[0];
     }
 

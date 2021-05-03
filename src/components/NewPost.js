@@ -7,7 +7,7 @@ function NewPost(props) {
     const history = useHistory();
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
-    const [category, setCategory] = useState('water'); // default value
+    const [category, setCategory] = useState('Water'); // default value
 
     function handleTitle(e) {
         setTitle(e.target.value)
@@ -40,9 +40,9 @@ function NewPost(props) {
                 <label>
                     Choose a category:
                     <select value={category} onChange={handleCategory}>
-                        <option value="water">Water</option>
-                        <option value="food">Food</option>
-                        <option value="housing">Housing</option>
+                        <option value="Water">Water</option>
+                        <option value="Food">Food</option>
+                        <option value="Housing">Housing</option>
                     </select>
                 </label>
                 <label>

@@ -102,6 +102,7 @@ function PostPreview(props) {
 
     // takes in post
     function renderCategoryIcon(p) {
+        console.log(p.category);
         switch (p.category) {
             case "Housing":
                 return <span className="fas fa-warehouse cat"></span>;

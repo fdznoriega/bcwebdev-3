@@ -13,6 +13,7 @@ hr {
 }
 
 span {
+  margin-top: 3px;
   margin-left: 1px;
 }
 
@@ -45,6 +46,7 @@ span.count {
 .user_image {
   width: 25px;
   height: 25px;
+  border-radius: 50%;
 }
 
 .title_text {

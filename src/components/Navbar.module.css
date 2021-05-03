@@ -18,8 +18,9 @@ body {
   padding-top: 6px;
 }
 
-.navItem img {
-  cursor:pointer;
+.navItem span {
+  margin: 0 auto;
+  cursor: pointer;
 }
 
 .navText {

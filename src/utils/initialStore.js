@@ -21,7 +21,7 @@ let initialStore = {
             email: "anthony@bc.edu",
             type: UserType.User,
             name: "Anthony Stevens",
-            bio: "Passionate about helping others. Looking for food banks!",
+            bio: "Passionate about helping others.",
             photo: "/assets/anthony.png",
             zipcode: "33764"
         },

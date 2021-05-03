@@ -48,7 +48,7 @@ let initialStore = {
             email: "mig@gmail.com",
             type: UserType.User,
             name: "Miguel Marcos",
-            bio: "",
+            bio: "Hello there!",
             photo: "/assets/default.png",
             zipcode: "02131"
         },

@@ -7,7 +7,7 @@ i {
 }
 
 span {
-  margin-right: 5px;
+  margin-left: 1px;
 }
 
 .preview_background {
@@ -45,6 +45,10 @@ span {
 
 .title_divide {
   margin: 5px 0;
+}
+
+span.count {
+  margin-right: 5px;
 }
 
 .like_info, .comment_info {

@@ -72,7 +72,7 @@ function PostPreview(props) {
                 return <span className="fas fa-warehouse cat"></span>;
             case "Water":
                 return <span className="fas fa-tint cat"></span>;
-            case "Food": 
+            case "Food":
                 return <span className="fas fa-utensils cat"></span>;
         }
     }
@@ -118,12 +118,12 @@ function PostPreview(props) {
                     {/* likes and comments */}
                     <section>
                         <div className={css.like_info}>
-                            <span>{likeCount}</span>
+                            <span className={css.count}>{likeCount}</span>
                             {renderLikeIcon()}
                         </div>
 
                         <div className={css.comment_info}>
-                            <span>{commentCount}</span>
+                            <span className={css.count}>{commentCount}</span>
                             <Link to={"/post/" + post.id}>
                                 <i className="fas fa-comment"></i>
                             </Link>

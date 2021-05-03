@@ -35,12 +35,14 @@ function Post(props) {
 
                     {
                         comments.map((comment, i) => {
+                            // fetch comment user
+                            let commentUser = props.store.users.filter(u => u.id === comment.userId)[0];
                             return(
                                 <div key={i}>
                                     <div className={css.comment}>
-                                        <img className={css.user_image} src={publicUrl("/assets/default.png")}></img>
+                                        <img className={css.user_image} src={publicUrl(commentUser.photo)}></img>
                                         <b>
-                                            <p className={css.user}>{comment.userId}</p>
+                                            <p className={css.user}>{commentUser.id}</p>
                                         </b>
                                     </div>
                                     <p className={css.user_text}>{comment.text}</p>

@@ -67,7 +67,6 @@ function PostPreview(props) {
 
     // takes in post
     function renderCategoryButton(p) {
-
         switch (p.category) {
             case "Housing":
                 return <span className="fas fa-warehouse cat"></span>;
@@ -97,6 +96,9 @@ function PostPreview(props) {
                                 alt={props.user.id}
                             />
                         </Link>
+
+                        {/* remove this if too ugly */}
+                        {props.isFullPost ? <span>{post.userId}</span> : null }
 
                         <Link to={"/post/" + post.id}>
                             <b>

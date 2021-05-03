@@ -1,12 +1,17 @@
 import css from './PostPreview.module.css';
 import {Link} from 'react-router-dom';
 import publicUrl from '../utils/publicUrl';
+import {useState} from 'react';
 
 function PostPreview(props) {
 
     // key, user, post, comments, likes, onLike, onUnlike, onComment
     const post = props.post;
     const maxChars = 100;
+    
+    // comment can be added when fullpost
+    const [comment, setComment] = useState('');
+    const [toggleComment, setToggleComment] = useState(false); // hidden initially
 
     // placeholder title and body which will be shrunk if we're in preview mode
     let title;
@@ -33,6 +38,17 @@ function PostPreview(props) {
         props.onUnlike(post.id);
     }
 
+    function handleComment() {
+        setToggleComment(!toggleComment);
+    }
+
+    function handleSubmitComment(event){
+        props.onComment(props.post.id, comment); // this calls addComment from App.js
+        setComment(''); //reset
+        setToggleComment(false); //close comment box
+        event.preventDefault(); // prevent page refresh
+    }
+
     // renders like icon, which can be "liked" or "unliked"
     function renderLikeIcon() {
         if(props.likes.self) {
@@ -44,6 +60,19 @@ function PostPreview(props) {
             return (
                 <i className="far fa-heart" onClick={handleLike}></i>
             );
+        }
+    }
+
+    function renderCommentIcon() {
+        if(!props.isFullPost) {
+            return (
+                <Link to={"/post/" + post.id}>
+                    <i className="fas fa-comment" onClick={handleComment}></i>
+                </Link>
+            );
+        }
+        else {
+            return <i className="fas fa-comment" onClick={handleComment}></i>;
         }
     }
 
@@ -72,7 +101,7 @@ function PostPreview(props) {
     }
 
     // takes in post
-    function renderCategoryButton(p) {
+    function renderCategoryIcon(p) {
         switch (p.category) {
             case "Housing":
                 return <span className="fas fa-warehouse cat"></span>;
@@ -85,10 +114,11 @@ function PostPreview(props) {
 
     return (
         <div>
+            {/* main content */}
             <div className={findPreviewType()}>
                 {/* FIRST COLUMN: COLOR */}
                 <div className={css.color_flex_item}>
-                    {renderCategoryButton(post)}
+                    {renderCategoryIcon(post)}
                 </div>
 
                 {/* SECOND COLUMN: CONTENT */}
@@ -130,9 +160,7 @@ function PostPreview(props) {
 
                         <div className={css.comment_info}>
                             <span className={css.count}>{commentCount}</span>
-                            <Link to={"/post/" + post.id}>
-                                <i className="fas fa-comment"></i>
-                            </Link>
+                            {renderCommentIcon()}
                         </div>
                     </section>
 
@@ -143,6 +171,19 @@ function PostPreview(props) {
                     {renderExpandButton()}
                 </div>
             </div>
+            {/* add comment div */}
+            {
+                toggleComment &&
+                <form className={css.addComment} onSubmit={handleSubmitComment}>
+                    <input 
+                        type="text" 
+                        placeholder="Add a comment…" 
+                        value={comment} 
+                        onChange={e=>setComment(e.target.value)}
+                    />
+                    <button type="submit">Post</button>
+                </form>
+            }
         </div>
     );
 }

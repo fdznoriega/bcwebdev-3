@@ -8,7 +8,6 @@ function NewPost(props) {
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
     const [category, setCategory] = useState('water'); // default value
-    const [error, setError] = useState('');
 
     function handleTitle(e) {
         setTitle(e.target.value)

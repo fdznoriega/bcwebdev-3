@@ -9,7 +9,6 @@
 * 3: Filter based on zip code??
 
 ### Post.js
-* 1: Arrow on the right side that takes back to home
 * 1: Add comments to post! Duh!
 
 ### Content

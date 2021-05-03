@@ -21,7 +21,6 @@ function Post(props) {
         return (
             <div className={css.comments_section}>
                 <hr className={css.comment_divide}></hr>
-                <p className={css.comments_header}>Comments:</p>
                 {
                     comments.map((comment, i) => {
                         // fetch comment user
@@ -61,7 +60,7 @@ function Post(props) {
             />
                 
             {renderComments()}
-            
+
         </div>
     )
 

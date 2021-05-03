@@ -7,7 +7,7 @@ function NewPost(props) {
     const history = useHistory();
     const [title, setTitle] = useState('');
     const [text, setText] = useState('');
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState('water'); // default value
     const [error, setError] = useState('');
 
     function handleTitle(e) {
@@ -25,8 +25,9 @@ function NewPost(props) {
     function handleSubmit(e) {
         e.preventDefault();
         if(title === '' || text === '' || category === '') { return; }
-        console.log('posting');
+        console.log('posting and sending home');
         props.onPost(title, text, category);
+        history.push("/");
     }
 
     function handleCancel() {

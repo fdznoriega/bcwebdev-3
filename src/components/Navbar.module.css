@@ -15,11 +15,12 @@ body {
 
 .navItem {
   flex-basis: 20%;
-  padding-top: 6px;
+  padding-top: 8px;
 }
 
-.navItem img {
-  cursor:pointer;
+.navItem span {
+  margin: 0 auto;
+  cursor: pointer;
 }
 
 .navText {

@@ -6,8 +6,18 @@ i {
   color: green;
 }
 
+hr {
+  height: 1px;
+  background-color: green;
+  border: none;
+}
+
 span {
   margin-left: 1px;
+}
+
+span.count {
+  margin-right: 5px;
 }
 
 .preview_background {
@@ -45,10 +55,6 @@ span {
 
 .title_divide {
   margin: 5px 0;
-}
-
-span.count {
-  margin-right: 5px;
 }
 
 .like_info, .comment_info {

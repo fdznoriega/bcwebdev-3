@@ -45,7 +45,7 @@ function Profile(props) {
 
                 {/* bio */}
                 <div>
-                    <p>Passionate about helping others. Looking for food banks!</p>
+                    <p>{user.bio}</p>
                 </div>
             </section>
 

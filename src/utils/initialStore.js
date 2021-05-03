@@ -21,7 +21,7 @@ let initialStore = {
             email: "anthony@bc.edu",
             type: UserType.User,
             name: "Anthony Stevens",
-            bio: "",
+            bio: "Passionate about helping others. Looking for food banks!",
             photo: "/assets/anthony.png",
             zipcode: "33764"
         },
@@ -30,7 +30,7 @@ let initialStore = {
             email: "bosfood@foodbank.org",
             type: UserType.Organization,
             name: "The Greater Boston Food Bank",
-            bio: "Together, we can end hunger here",
+            bio: "Together, we can end hunger.",
             photo: "/assets/foodbank.png",
             zipcode: "02111"
         },
@@ -39,7 +39,7 @@ let initialStore = {
             email: "saundra@gmail.com",
             type: UserType.User,
             name: "Saundra Mills",
-            bio: "",
+            bio: "Mother of three. Here to learn and inspire others.",
             photo: "/assets/saundra.png",
             zipcode: "02118"
         }

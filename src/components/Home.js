@@ -5,10 +5,14 @@ import css from './Home.module.css';
 import {
     Link
 } from "react-router-dom";
+import publicUrl from '../utils/publicUrl';
 
 function Home(props) {
 
     const posts = props.store.posts;
+    const user = props.store.users.filter(u => u.id===props.store.currentUserId)[0];
+
+    console.log(user);
 
     let {category} = useParams();
 
@@ -17,7 +21,11 @@ function Home(props) {
         <div>
             <p className={css.profile}>
                 <Link to="/profile">
-                    <i className="fas fa-user-circle"></i>
+                    <img 
+                        src={publicUrl(user.photo)}
+                        className={css.userProfilePicture}
+                        alt="profile"
+                    />
                 </Link>
             </p>
             <p className={css.home_title}>Your Feed</p>

@@ -15,3 +15,11 @@ p i {
   text-align: center;
   margin-top: 0;
 }
+
+.userProfilePicture {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 60px;
+  margin-top: 10px;
+}

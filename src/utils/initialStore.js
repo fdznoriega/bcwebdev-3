@@ -23,7 +23,7 @@ let initialStore = {
             name: "Anthony Stevens",
             bio: "Passionate about helping others.",
             photo: "/assets/anthony.png",
-            zipcode: "33764"
+            zipcode: "02109"
         },
         {
             id: "bosfoodbank",
@@ -42,7 +42,17 @@ let initialStore = {
             bio: "Mother of three. Here to learn and inspire others.",
             photo: "/assets/saundra.png",
             zipcode: "02118"
-        }
+        },
+        {
+            id: "miguel",
+            email: "mig@gmail.com",
+            type: UserType.User,
+            name: "Miguel Marcos",
+            bio: "",
+            photo: "/assets/default.png",
+            zipcode: "02131"
+        },
+
     ],
     posts: [
         {
@@ -71,6 +81,15 @@ let initialStore = {
             body: "You can find our new address at our website: https://www.gbfb.org/",
             category: Category.Food,
             datetime: "2021-04-09T22:45:28Z"
+        },
+        {
+            id: "post-4",
+            userId: "miguel",
+            userType: UserType.User,
+            title: "Good housing nearby",
+            body: "I'm moving to Boston to take care of my family members. Does anyone know where I can find safe, affordable housing?",
+            category: Category.Housing,
+            datetime: "2021-04-15T22:45:28Z"
         }
     ],
     comments: [
@@ -91,6 +110,12 @@ let initialStore = {
             postId:"post-3",
             text:"This is a bit far from me now. What's going to happen to the old location?",
             datetime:"2021-02-09T22:54:40Z"
+        },
+        {
+            userId:"saundra",
+            postId:"post-4",
+            text:"Let me know if you find anything!",
+            datetime:"2021-04-16T22:54:40Z"
         }
     ],
     likes: [
@@ -98,6 +123,11 @@ let initialStore = {
             userId:"anthony",
             postId:"post-1",
             datetime:"2021-02-09T22:45:28Z"
+        },
+        {
+            userId:"saundra",
+            postId:"post-4",
+            datetime:"2021-04-16T22:45:28Z"
         },
     ]
 

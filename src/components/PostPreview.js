@@ -62,6 +62,12 @@ function PostPreview(props) {
                   <i className="fas fa-angle-right fa-2x arrow"></i>
               </Link>
             )
+        } else {
+            return (
+              <Link to= {"/"}>
+                  <i className="fas fa-angle-left fa-2x arrow"></i>
+              </Link>
+          )
         }
     }
 
